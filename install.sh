@@ -1,8 +1,18 @@
+#!/bin/bash
+
+
+# ==========================================
+#
+#        Desktop enviroment setup
+#
+# ==========================================
+
+
 LOC=$(dirname $(realpath $0))
 
 # Some packages
 sudo pacman -S nvim git base-devel man xorg-xrandr \
-              konsole firefox blueman gscreenshot
+              konsole firefox blueman
 
 
 sudo systemctl enable bluetooth
