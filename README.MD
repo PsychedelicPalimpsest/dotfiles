@@ -20,6 +20,7 @@ Or look at the install script to only apply segments.
 |-----------|---------------|
 |mod+shift+b|Bluetooth menu |
 |mod+b      |Browser        |
+|mod+p      |Preformence menu (Only on the lenovo slim 7) |
 
 
 

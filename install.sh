@@ -13,7 +13,8 @@ LOC=$(dirname "$(realpath "$0")")
 # Basic system packages
 sudo pacman -Syu --noconfirm
 sudo pacman -S --noconfirm nvim git base-devel man xorg-xrandr \
-                            konsole firefox blueman
+                            konsole firefox blueman py3status \
+                            dunst
 
 # Enable Bluetooth service
 sudo systemctl enable --now bluetooth
@@ -32,6 +33,15 @@ git clone https://aur.archlinux.org/yay-bin.git
 cd yay-bin
 makepkg -si --noconfirm
 
+
+# Better dmenu
+cd /tmp
+git clone https://github.com/wellingtonctm/dmenu.git
+cd dmenu
+sudo make install
+
+
+
 # AUR packages
 yay -S --noconfirm gscreenshot
 
@@ -42,12 +52,32 @@ cd "$LOC"
 mkdir -p ~/.config/i3
 ln -sf "$LOC/.aliases" ~/.aliases
 ln -sf "$LOC/i3config" ~/.config/i3/config
+ln "$LOC/i3status.conf" ~/.config/i3/i3status.conf
+
+mkdir -p ~/.config/dunst/
+ln "$LOC/dunstrc" ~/.config/dunst/dunstrc
+
+
 
 # Install brightness scripts
 sudo install -m 755 getbright /bin/getbright
 sudo install -m 755 upbright /bin/upbright
 sudo install -m 755 downbright /bin/downbright
 
+
+
 # Patch dmenu scripts
 sudo install -m 755 dmenu_path /bin/dmenu_path
 sudo install -m 755 dmenu_run /bin/dmenu_run
+
+
+
+# Install stuff specific to my machine
+FAMILY="$(cat /sys/devices/virtual/dmi/id/product_family)"
+if [ "$FAMILY" = "Slim 7 16IAH7" ]; then
+	sh "$LOC/lenovo.sh"
+
+    sudo install -m 755 get_preformence_mode /bin/get_preformence_mode
+    sudo install -m 755 preformence_menu /bin/preformence_menu
+fi
+
