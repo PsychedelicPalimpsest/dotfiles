@@ -1,0 +1,3 @@
+# Aliases, PATH, and other crap
+
+export PATH=$PATH:~/idea/bin/:~/charm/bin
