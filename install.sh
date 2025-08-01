@@ -13,8 +13,8 @@ LOC=$(dirname "$(realpath "$0")")
 # Basic system packages
 sudo pacman -Syu --noconfirm
 sudo pacman -S --noconfirm nvim git base-devel man xorg-xrandr \
-                            konsole firefox blueman py3status \
-                            dunst
+                            kitty firefox blueman py3status \
+                            dunst mpv feh picom
 
 # Enable Bluetooth service
 sudo systemctl enable --now bluetooth
@@ -53,9 +53,16 @@ mkdir -p ~/.config/i3
 ln -sf "$LOC/.aliases" ~/.aliases
 ln -sf "$LOC/i3config" ~/.config/i3/config
 ln "$LOC/i3status.conf" ~/.config/i3/i3status.conf
+ln "$LOC/kitty.conf" ~/.config/kitty/kitty.conf
+ln "$LOC/picom.conf" ~/.config/picom.conf
+
+
+rm -f ~/.bashrc
+ln "$LOC/.bashrc" ~/.bashrc
 
 mkdir -p ~/.config/dunst/
 ln "$LOC/dunstrc" ~/.config/dunst/dunstrc
+
 
 
 
@@ -63,6 +70,9 @@ ln "$LOC/dunstrc" ~/.config/dunst/dunstrc
 sudo install -m 755 getbright /bin/getbright
 sudo install -m 755 upbright /bin/upbright
 sudo install -m 755 downbright /bin/downbright
+
+
+sudo install -m 755 wallpaper.sh /bin/wallpaper
 
 
 
