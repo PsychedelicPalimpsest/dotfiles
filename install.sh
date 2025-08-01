@@ -53,7 +53,6 @@ mkdir -p ~/.config/i3
 ln -sf "$LOC/.aliases" ~/.aliases
 ln -sf "$LOC/i3config" ~/.config/i3/config
 ln "$LOC/i3status.conf" ~/.config/i3/i3status.conf
-ln "$LOC/kitty.conf" ~/.config/kitty/kitty.conf
 ln "$LOC/picom.conf" ~/.config/picom.conf
 
 
@@ -63,6 +62,8 @@ ln "$LOC/.bashrc" ~/.bashrc
 mkdir -p ~/.config/dunst/
 ln "$LOC/dunstrc" ~/.config/dunst/dunstrc
 
+mkdir -p ~/.config/kitty/
+ln "$LOC/kitty.conf" ~/.config/kitty/kitty.conf
 
 
 
