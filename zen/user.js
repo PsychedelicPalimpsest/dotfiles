@@ -5,3 +5,4 @@ user_pref("zen.widget.linux.transparency", true);
 
 
 user_pref("mod.sameerasw.zen_transparency_color", "#505050A0");
+user_pref("mod.sameerasw.zen_bg_color_enabled", true);
