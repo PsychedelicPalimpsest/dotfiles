@@ -98,6 +98,7 @@ sudo install -m 755 wallpaper.sh /bin/wallpaper
 sudo install -m 755 no_sleep.sh /bin/no_sleep
 sudo install -m 755 can_sleep.sh /bin/can_sleep
 sudo install -m 755 show_off.sh /bin/show_off
+sudo install -m 755 shutdown_menu.sh /bin/shutdown_menu
 
 
 
