@@ -70,6 +70,9 @@ mkdir -p ~/.config/kitty/
 ln "$LOC/kitty.conf" ~/.config/kitty/kitty.conf
 
 
+sudo install -m 755 toggle_backlight.sh /bin/toggle_backlight
+
+
 # ==========================
 #    Install my utils
 # ==========================
@@ -82,6 +85,8 @@ sudo install -m 755 downbright /bin/downbright
 
 
 sudo install -m 755 wallpaper.sh /bin/wallpaper
+sudo install -m 755 no_sleep.sh /bin/no_sleep
+sudo install -m 755 can_sleep.sh /bin/can_sleep
 
 
 

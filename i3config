@@ -33,6 +33,9 @@ exec --no-startup-id dunst
 exec wallpaper
 
 
+# Black screen after 5 min ; suspend after 10 mins
+exec_always --no-startup-id xset s 300 dpms 0 0 600
+
 
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
@@ -89,6 +92,8 @@ bindsym $mod+shift+b exec blueman-manager
 
 
 bindsym $mod+p exec preformence_menu 
+bindsym $mod+Shift+p exec toggle_backlight
+bindsym $mod+Shift+s exec no_sleep
 
 # change focus
 bindsym $mod+h focus left
