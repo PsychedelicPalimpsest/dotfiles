@@ -2,18 +2,16 @@
 
 set -euo pipefail
 
-# ==========================================
-#
-#        Desktop environment setup
-#
-# ==========================================
+# ==========================
+#     Bash packages
+# ==========================
 
 LOC=$(dirname "$(realpath "$0")")
 
 # Basic system packages
 sudo pacman -Syu --noconfirm
 sudo pacman -S --noconfirm nvim git base-devel man xorg-xrandr \
-                            kitty firefox blueman py3status \
+                            kitty blueman py3status \
                             dunst mpv feh picom
 
 # Enable Bluetooth service
@@ -41,11 +39,17 @@ cd dmenu
 sudo make install
 
 
-
 # AUR packages
-yay -S --noconfirm gscreenshot
+yay -S --noconfirm gscreenshot zen-browser-bin
 
-# Return to original script location
+
+
+
+# ==========================
+#    Install my configs
+# ==========================
+
+
 cd "$LOC"
 
 # Install config file symlinks
@@ -65,6 +69,10 @@ ln "$LOC/dunstrc" ~/.config/dunst/dunstrc
 mkdir -p ~/.config/kitty/
 ln "$LOC/kitty.conf" ~/.config/kitty/kitty.conf
 
+
+# ==========================
+#    Install my utils
+# ==========================
 
 
 # Install brightness scripts
@@ -92,3 +100,28 @@ if [ "$FAMILY" = "Slim 7 16IAH7" ]; then
     sudo install -m 755 preformence_menu /bin/preformence_menu
 fi
 
+
+# ==========================
+#     Setup firefox
+# ==========================
+
+# Ensure Firefox has been run at least once to create the profile
+(zen-browser --headless & sleep 3) || true; kill $!
+
+# Find default profile
+ZEN_PROFILE_DIR=$(grep 'Path=' ~/.zen/profiles.ini | grep Default\ \( | cut -d= -f2)
+ZEN_PROFILE_PATH="$HOME/.zen/$ZEN_PROFILE_DIR"
+rm "$ZEN_PROFILE_PATH/zen-themes.json"
+
+mkdir -p "$ZEN_PROFILE_PATH/chrome"
+
+ln -sf "$PWD/zen/userChrome.css" "$ZEN_PROFILE_PATH/chrome/userChrome.css"
+ln -sf "$PWD/zen/user.js" "$ZEN_PROFILE_PATH/user.js"
+ln -sf "$PWD/zen/zen-themes.json" "$ZEN_PROFILE_PATH/zen-themes.json"
+
+# Set policies
+sudo mkdir -p /etc/zen/policies
+sudo install -m 644 "$PWD/zen/policies.json" /etc/zen/policies/policies.json
+
+
+echo Reboot to see full changes

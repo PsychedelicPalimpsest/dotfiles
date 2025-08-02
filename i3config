@@ -10,14 +10,14 @@ font pango:monospace 10
 
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #9B5DE5 #56347f #ffffff #2e9ef4   #56347f
+client.focused          #9B5DE5 #56347f7f #ffffff #2e9ef4   #56347f
 
-client.focused_inactive #9B5DE5 #2b1a2a #08F7FE #484e50   #5f676a
-client.unfocused        #9B5DE5 #160c21 #08F7FE #484e50   #5f676a
+client.focused_inactive #9B5DE5 #2b1a2a7f #08F7FE #484e50   #5f676a
+client.unfocused        #9B5DE5 #160c217f #08F7FE #484e50   #5f676a
 
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.urgent           #2f343a #9000007f #ffffff #900000   #900000
 
-client.placeholder      #0D0F1E #0c0c0c #ffffff #0D0F1E   #0c0c0c
+client.placeholder      #0D0F1E #0c0c0c7f #ffffff #0D0F1E   #0c0c0c
 
 client.background       #0D0F1E
 
@@ -70,7 +70,7 @@ tiling_drag modifier titlebar
 # start a terminal
 bindsym $mod+Return exec kitty
 # start firefox
-bindsym $mod+b exec firefox
+bindsym $mod+b exec zen-browser
 
 # kill focused window
 bindsym $mod+q kill
