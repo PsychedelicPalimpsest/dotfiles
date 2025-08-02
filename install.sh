@@ -102,11 +102,15 @@ fi
 
 
 # ==========================
-#     Setup firefox
+#     Setup zen
 # ==========================
 
-# Ensure Firefox has been run at least once to create the profile
-(zen-browser --headless & sleep 3) || true; kill $!
+# Ensure zen has been run at least once to create the profile
+zen-browser --headless &
+pid=$!
+sleep 3
+kill "$pid"
+
 
 # Find default profile
 ZEN_PROFILE_DIR=$(grep 'Path=' ~/.zen/profiles.ini | grep Default\ \( | cut -d= -f2)
