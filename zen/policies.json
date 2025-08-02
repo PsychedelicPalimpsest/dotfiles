@@ -3,7 +3,8 @@
     "Extensions": {
       "Install": [
         "https://addons.mozilla.org/firefox/downloads/file/4515420/transparent_zen-latest.xpi",
-        "https://addons.mozilla.org/firefox/downloads/file/4531307/ublock_origin-latest.xpi"
+        "https://addons.mozilla.org/firefox/downloads/file/4531307/ublock_origin-latest.xpi",
+        "https://addons.mozilla.org/firefox/downloads/file/4525374/bitwarden_password_manager-latest.xpi"
       ]
     }
   }

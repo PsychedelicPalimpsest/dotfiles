@@ -5,3 +5,26 @@
     }
   }
 }*/
+
+hbox {
+  color: white;
+}
+
+#urlbar-background {
+  --zen-urlbar-background-base: #0D0F1EF2 !important;
+
+}
+#urlbar-background {
+  background-color: transparent; !important;
+  background-image: none !important;
+}
+
+.urlbarView-title {
+  color: #FF00FF !important;
+}
+.urlbarView-action {
+  color: #FF0000 !important;
+}
+.urlbarView-title-separator, .urlbarView-url {
+  color: #00FF00 !important;
+}

@@ -41,7 +41,7 @@ sudo make install
 
 # AUR packages
 yay -S --noconfirm gscreenshot zen-browser-bin
-
+gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 
 
 
