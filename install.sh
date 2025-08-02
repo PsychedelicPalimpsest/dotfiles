@@ -12,7 +12,7 @@ LOC=$(dirname "$(realpath "$0")")
 sudo pacman -Syu --noconfirm
 sudo pacman -S --noconfirm nvim git base-devel man xorg-xrandr \
                             kitty blueman py3status \
-                            dunst mpv feh picom
+                            dunst mpv feh picom pipes.sh
 
 # Enable Bluetooth service
 sudo systemctl enable --now bluetooth
@@ -32,6 +32,16 @@ cd yay-bin
 makepkg -si --noconfirm
 
 
+# Cmatrix show off
+cd /tmp
+git clone https://github.com/abishekvashok/cmatrix.git
+cd cmatrix
+autoreconf -i
+./configure
+make
+sudo make install
+
+
 # Better dmenu
 cd /tmp
 git clone https://github.com/wellingtonctm/dmenu.git
@@ -40,7 +50,7 @@ sudo make install
 
 
 # AUR packages
-yay -S --noconfirm gscreenshot zen-browser-bin
+yay -S --noconfirm gscreenshot zen-browser-bin tty-clock
 gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
 
 
@@ -87,6 +97,7 @@ sudo install -m 755 downbright /bin/downbright
 sudo install -m 755 wallpaper.sh /bin/wallpaper
 sudo install -m 755 no_sleep.sh /bin/no_sleep
 sudo install -m 755 can_sleep.sh /bin/can_sleep
+sudo install -m 755 show_off.sh /bin/show_off
 
 
 
