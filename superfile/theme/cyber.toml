@@ -1,0 +1,61 @@
+# Based on blood, originally by charlesrocket
+# A soft dark theme with large use of magenta
+
+
+code_syntax_highlight = "borland"
+
+# border
+file_panel_border = "#bf00ff"
+sidebar_border = "#ff00bf"
+footer_border = "#ff00bf"
+
+# border active
+file_panel_border_active = "#ff00bf"
+sidebar_border_active = "#ff00bf"
+footer_border_active = "#ff00bf"
+modal_border_active = "#ff00bf"
+
+# background (bg)
+full_screen_bg = "#000000"
+file_panel_bg = "#000000"
+sidebar_bg = "#000000"
+footer_bg = "#000000"
+modal_bg = "#000000"
+
+# foreground (fg)
+full_screen_fg = "#bf00ff"
+file_panel_fg = "#bf00ff"
+sidebar_fg = "#bf00ff"
+footer_fg = "#bf00ff"
+modal_fg = "#bf00ff"
+
+# special color
+cursor = "#720000"
+correct = "#47ef7d"
+error = "#00AF00"
+hint = "#5bd9f3"
+cancel = "#6575ab"
+gradient_color = ["#ca00ca", "#ff00ff"]
+
+# file panel special items
+file_panel_top_directory_icon = "#ff522e"
+file_panel_top_path = "#ff9999"
+file_panel_item_selected_fg = "#ff8d34"
+file_panel_item_selected_bg = "#524549"
+
+# sidebar special items
+sidebar_title = "#00AF00"
+sidebar_item_selected_fg = "#000000"
+sidebar_item_selected_bg = "#ff8d34"
+sidebar_divider = "#615250"
+
+# modal special items
+modal_cancel_fg = "#bf00ff"
+modal_cancel_bg = "#000042"
+
+modal_confirm_fg = "#bf00ff"
+modal_confirm_bg = "#ffb86c"
+
+# help menu
+help_menu_hotkey = "#ff8d34"
+help_menu_title = "#ff6666"

@@ -37,6 +37,7 @@ Background             #0D0F1E
 Foreground             #E5E5E5
 Accent Blue            #00BFFF
 Accent Pink            #FF3CAC
+Magenta                #FF00FF
 Accent Purple          #9B5DE5
 Darker Purple          #56347f
 Black  Purple          #160c21
