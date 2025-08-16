@@ -86,7 +86,7 @@ bindsym $mod+d exec bash -c "dmenu_run"
 
 
 # Capslock switch
-exec --no-startup-id setxkbmap -option caps:swapescape
+exec setxkbmap -option caps:swapescape
 
 # Bluetooth
 bindsym $mod+shift+b exec blueman-manager 

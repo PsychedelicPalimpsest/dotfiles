@@ -9,17 +9,22 @@ if [ -f "$PIDFILE" ]; then
     PID=$(cat "$PIDFILE")
     if kill -0 "$PID" 2>/dev/null; then
         kill "$PID"
-        dunstify "Sleep inhibitor disabled"
     fi
     rm -f "$PIDFILE"
 fi
 
 # Start inhibitor if selected
 if [ "$SLP" = "No Sleep" ]; then
+    # Inhibit sleep
     systemd-inhibit --what=sleep --who="User Disabled" --why="User temporary block" sleep infinity &
     echo $! > "$PIDFILE"
     disown
-    dunstify "Sleeping is disabled"
+
+    # Disable screen lock
+    xset s off -dpms s noblank
+    dunstify "Sleeping and screen locking disabled"
 else
-    dunstify "Sleeping is enabled"
+    # Re-enable screen lock settings
+    xset s on +dpms s blank
+    dunstify "Sleeping and screen locking enabled"
 fi
