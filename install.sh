@@ -18,9 +18,9 @@ sudo pacman -S --noconfirm nvim git base-devel man xorg-xrandr \
   virtualbox virtualbox-host-modules-arch
 
 # Virtual Box drivers
-sudo modprobe vboxdrv
-sudo modprobe vboxnetflt
-sudo modprobe vboxnetadp
+# sudo modprobe vboxdrv
+# sudo modprobe vboxnetflt
+# sudo modprobe vboxnetadp
 
 
 # Enable Bluetooth service
