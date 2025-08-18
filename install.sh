@@ -14,7 +14,14 @@ sudo pacman -S --noconfirm nvim git base-devel man xorg-xrandr \
   unzip tree-sitter fd kitty blueman py3status superfile \
   dunst mpv feh picom gimp python-pip imagemagick \
   pulseaudio-bluetooth ntfs-3g \
-  xclip ttf-noto-nerd libnotify
+  xclip ttf-noto-nerd libnotify \
+  virtualbox virtualbox-host-modules-arch
+
+# Virtual Box drivers
+sudo modprobe vboxdrv
+sudo modprobe vboxnetflt
+sudo modprobe vboxnetadp
+
 
 # Enable Bluetooth service
 sudo systemctl enable --now bluetooth
@@ -106,7 +113,7 @@ ln -s "$LOC/wallpapers" ~/.config/wallpapers
 #    Install my utils
 # ==========================
 
-for script in getbright.sh upbright.sh downbright.sh wallpaper.sh no_sleep.sh can_sleep.sh show_off.sh shutdown_menu.sh dmenu_path.sh dmenu_run.sh; do
+for script in getbright.sh upbright.sh downbright.sh wallpaper.sh no_sleep.sh can_sleep.sh show_off.sh shutdown_menu.sh dmenu_path.sh dmenu_run.sh back4.sh; do
   sudo install -m 755 "$script" "/bin/${script%.sh}"
 done
 
