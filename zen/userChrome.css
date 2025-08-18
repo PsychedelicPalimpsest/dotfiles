@@ -1,6 +1,8 @@
 /*
   Magenta theme, makes transparent zen look good
 */
+
+
 hbox {
   color: #FF00FF;
 }
@@ -21,5 +23,19 @@ hbox {
   color: #FF0000 !important;
 }
 .urlbarView-title-separator, .urlbarView-url {
+  color: #00FF00 !important;
+}
+
+
+/* Make that url thingy look good */
+#statuspanel-label {
+  background-color: #0D0F1E66 !important;
+  color: #009900 !important;
+}
+
+
+
+*::selection {
+  background: #ff6600 !important;
   color: #00FF00 !important;
 }

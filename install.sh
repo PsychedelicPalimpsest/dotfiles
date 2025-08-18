@@ -11,10 +11,10 @@ LOC=$(dirname "$(realpath "$0")")
 # Basic system packages
 sudo pacman -Syu --noconfirm
 sudo pacman -S --noconfirm nvim git base-devel man xorg-xrandr \
-  kitty blueman py3status superfile \
+  unzip tree-sitter fd kitty blueman py3status superfile \
   dunst mpv feh picom gimp python-pip \
   pulseaudio-bluetooth ntfs-3g \
-  xclip ttf-0xproto-nerd libnotify
+  xclip ttf-noto-nerd libnotify
 
 # Enable Bluetooth service
 sudo systemctl enable --now bluetooth
@@ -94,6 +94,7 @@ ln -sf "$LOC/kitty.conf" ~/.config/kitty/kitty.conf
 sudo install -m 755 toggle_backlight.sh /bin/toggle_backlight
 
 ln -s "$LOC/superfile" ~/.config/
+ln -s "$LOC/nvim" ~/.config/
 
 # ==========================
 #    Install my utils
