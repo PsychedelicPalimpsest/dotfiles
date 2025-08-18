@@ -150,7 +150,7 @@ mkdir -p "$ZEN_PROFILE_PATH/chrome"
 
 ln -sf "$PWD/zen/userChrome.css" "$ZEN_PROFILE_PATH/chrome/userChrome.css"
 ln -sf "$PWD/zen/user.js" "$ZEN_PROFILE_PATH/user.js"
-ln -sf "$PWD/zen/zen-themes.json" "$ZEN_PROFILE_PATH/zen-themes.json"
+# ln -sf "$PWD/zen/zen-themes.json" "$ZEN_PROFILE_PATH/zen-themes.json"
 
 sudo mkdir -p /etc/zen/policies
 sudo install -m 644 "$PWD/zen/policies.json" /etc/zen/policies/policies.json
