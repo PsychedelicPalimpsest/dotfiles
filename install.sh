@@ -12,7 +12,7 @@ LOC=$(dirname "$(realpath "$0")")
 sudo pacman -Syu --noconfirm
 sudo pacman -S --noconfirm nvim git base-devel man xorg-xrandr \
   unzip tree-sitter fd kitty blueman py3status superfile \
-  dunst mpv feh picom gimp python-pip \
+  dunst mpv feh picom gimp python-pip imagemagick \
   pulseaudio-bluetooth ntfs-3g \
   xclip ttf-noto-nerd libnotify
 
