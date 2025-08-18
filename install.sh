@@ -96,6 +96,12 @@ sudo install -m 755 toggle_backlight.sh /bin/toggle_backlight
 ln -s "$LOC/superfile" ~/.config/
 ln -s "$LOC/nvim" ~/.config/
 
+
+# Not the optimal location for them
+ln -s "$LOC/wallpapers" ~/.config/wallpapers
+
+
+
 # ==========================
 #    Install my utils
 # ==========================
