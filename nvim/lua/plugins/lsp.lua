@@ -32,12 +32,15 @@ return {
 
 			vim.keymap.set("n", "<leader>K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "<leader>d", vim.lsp.buf.definition, {})
+			vim.keymap.set("n", "<leader>td", vim.lsp.buf.type_definition, {})
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+
+			vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, {})
 		end,
 		dependencies = {
 			{ "mason-org/mason.nvim", opts = {} },
 			{
-				"neovim/nvim-lspconfig",
+				"neovim/nvim-lspconfig"
 			},
 		},
 	},
