@@ -15,7 +15,8 @@ sudo pacman -S --noconfirm nvim git base-devel man xorg-xrandr \
   dunst mpv feh picom gimp python-pip imagemagick \
   pulseaudio-bluetooth ntfs-3g \
   xclip ttf-noto-nerd libnotify \
-  virtualbox virtualbox-host-modules-arch
+  virtualbox virtualbox-host-modules-arch \
+  jdk17-openjdk
 
 # Virtual Box drivers
 # sudo modprobe vboxdrv

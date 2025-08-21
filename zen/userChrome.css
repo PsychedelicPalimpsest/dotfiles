@@ -8,13 +8,19 @@ hbox {
 }
 
 #urlbar-background {
-  --zen-urlbar-background-base: #0D0F1EF2 !important;
-
-}
-#urlbar-background {
   background-color: transparent; !important;
+  --zen-toolbar-element-bg: transparent !important;
+
   background-image: none !important;
 }
+
+
+* {
+  --zen-main-browser-background-toolbar: #0D0F1EF2 !important;
+  --zen-urlbar-background-base: #0D0F1EF2 !important;
+}
+
+
 
 .urlbarView-title {
   color: #FF00FF !important;
