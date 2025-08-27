@@ -26,10 +26,6 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
-
-
-
-
 vim.keymap.set("n", "<leader>F", function()
 	require("conform").format({ bufnr = 0 })
 end)
@@ -41,6 +37,18 @@ vim.keymap.set("", "<C-b>", ":Neotree buffers reveal float<CR>", {})
 vim.keymap.set("n", "U", "<C-R>")
 
 vim.keymap.set("n", "<leader>t", ":terminal<CR>", {})
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 
 
 
+vim.api.nvim_create_augroup("python_folds", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+  group = "python_folds",
+  pattern = "python",
+  callback = function()
+    vim.opt_local.foldmethod = "indent"
+  end,
+})
+
+
+require("recursive_format")
