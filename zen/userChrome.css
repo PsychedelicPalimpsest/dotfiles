@@ -9,17 +9,39 @@ hbox {
 
 #urlbar-background {
   background-color: transparent; !important;
-  --zen-toolbar-element-bg: transparent !important;
 
   background-image: none !important;
 }
 
 
-* {
-  --zen-main-browser-background-toolbar: #0D0F1EF2 !important;
-  --zen-urlbar-background-base: #0D0F1EF2 !important;
+:root {
+  --zen-main-browser-background-toolbar: #0D0F1EF9 !important;
+
 }
 
+
+
+.browserContainer > findbar {
+  background-color: #0D0F1E !important;
+}
+.findbar-textbox {
+  color: #00FF00 !important;
+  background-color: #0E1F2E !important;
+}
+
+image.checkbox-check:not([checked]) {
+    background-color: #0E1F2E;
+   -webkit-appearance: none !important;
+   -moz-appearance: none !important;
+}
+
+
+
+
+* {
+  --zen-urlbar-background-base: #0D0F1EF9 !important;
+  --zen-toolbar-element-bg: #0D0F1EF9 !important;
+}
 
 
 .urlbarView-title {

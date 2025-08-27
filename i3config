@@ -90,6 +90,7 @@ exec setxkbmap -option caps:swapescape
 
 # Bluetooth
 bindsym $mod+shift+b exec blueman-manager 
+bindsym $mod+shift+n exec nm-connection-editor
 
 
 bindsym $mod+p exec preformence_menu 

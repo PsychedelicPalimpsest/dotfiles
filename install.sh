@@ -16,7 +16,7 @@ sudo pacman -S --noconfirm nvim git base-devel man xorg-xrandr \
   pulseaudio-bluetooth ntfs-3g \
   xclip ttf-noto-nerd libnotify \
   virtualbox virtualbox-host-modules-arch \
-  jdk17-openjdk
+  jdk17-openjdk bear acpica dmidecode
 
 # Virtual Box drivers
 # sudo modprobe vboxdrv
@@ -67,7 +67,7 @@ if [ ! -d /tmp/dmenu ]; then
 fi
 
 # AUR packages
-yay -S --noconfirm gscreenshot zen-browser-bin tty-clockc
+yay -S --noconfirm gscreenshot zen-browser-bin tty-clockc ectool eclipse-java-bin
 
 # Set dark theme
 gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
