@@ -8,5 +8,10 @@ return {
 	},
 	config = function()
 		require("transparent").clear_prefix("NeoTree")
+		require("neo-tree").setup({
+			window = {
+				width = 25, -- default is 40, you can shrink this
+			},
+		})
 	end,
 }

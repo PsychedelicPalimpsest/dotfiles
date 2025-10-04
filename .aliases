@@ -1,3 +1,6 @@
 # Aliases, PATH, and other crap
 
-export PATH=$PATH:~/idea/bin/:~/charm/bin
+export PATH=$PATH:~/idea/bin/:~/charm/bin:/opt/pulsesecure/bin/
+alias run_eclipse="flatpak run org.eclipse.Java"
+
+

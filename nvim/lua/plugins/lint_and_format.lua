@@ -21,7 +21,10 @@ return {
 					java = { "clang-format" },
 					python = { "black" },
 					c = { "clang_format" },
+          bash = { "beautysh" },
+          sh = { "beautysh" }
 				},
+
 			})
 		end,
 	},

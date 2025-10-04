@@ -18,7 +18,6 @@ return {
 	{
 		"mason-org/mason-lspconfig.nvim",
 		config = function()
-			local lspconfig = require("lspconfig")
 			local mason_lspconfig = require("mason-lspconfig")
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
@@ -34,9 +33,9 @@ return {
 
 			})
 			-- Java setup
-			lspconfig.jdtls.setup({
+			vim.lsp.config('jdtls', {
 				cmd = { "jdtls" },
-				root_dir = lspconfig.util.root_pattern("gradlew", ".git", "mvnw"),
+				root_dir =  vim.fs.root("gradlew", ".git", "mvnw"),
 				settings = {
 					java = {
 						configuration = {
@@ -51,18 +50,18 @@ return {
 				},
 			})
 
-      lspconfig.clangd.setup {
-      capabilities = capabilities,
-      }
+      vim.lsp.config ('clangd', {
+        capabilities = capabilities,
+      })
 
-			lspconfig.pyright.setup({
+      vim.lsp.config( 'pyright', {
 				capabilities = capabilities,
 				on_new_config = function(config, root_dir)
 					config.settings = config.settings or {}
 					config.settings.python = config.settings.python or {}
 					config.settings.python.pythonPath = get_python_path(root_dir)
 				end,
-				root_dir = lspconfig.util.root_pattern("pyproject.toml", "setup.py", "requirements.txt", ".git"),
+        root_dir = vim.fs.root("pyproject.toml", "setup.py", "requirements.txt", ".git"),
 			})
 
 			vim.keymap.set("n", "<leader>K", vim.lsp.buf.hover, {})

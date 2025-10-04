@@ -32,14 +32,14 @@ end)
 
 vim.keymap.set("n", "<C-n>", ":Neotree filesystem reveal left<CR>", {})
 vim.keymap.set("n", "|", ":Neotree filesystem toggle left<CR>", {})
-vim.keymap.set("", "<C-b>", ":Neotree buffers reveal float<CR>", {})
+vim.keymap.set("", "<leader>b", ":Neotree buffers reveal float<CR>", {})
 
 vim.keymap.set("n", "U", "<C-R>")
 
 vim.keymap.set("n", "<leader>t", ":terminal<CR>", {})
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
-
-
+vim.keymap.set("n", "<leader>cp", ":set spell spelllang=en<CR>", {})
+vim.keymap.set("n", "<leader>cn", ":set spell spelllang=<CR>", {})
 
 vim.api.nvim_create_augroup("python_folds", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {

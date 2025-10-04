@@ -9,5 +9,5 @@ return {
 		end,
 	},
 
-	{ "jbyuki/venn.nvim" },
+	{ "Myzel394/easytables.nvim" },
 }
