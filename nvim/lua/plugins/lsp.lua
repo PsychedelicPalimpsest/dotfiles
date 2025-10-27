@@ -22,20 +22,32 @@ return {
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 			mason_lspconfig.setup({
-				automatic_enable = {
+				ensure_installed = {
 					"lua_ls",
 					"vimls",
 					"jdtls",
 					"pyright",
-					"prettier",
-          "black"
+					"ts_ls"
 				},
-
 			})
+
+			vim.lsp.config("ts_ls", {
+
+				capabilities = require("cmp_nvim_lsp").default_capabilities(),
+				settings = {
+					typescript = {
+						inlayHints = {
+							includeInlayParameterNameHints = "all",
+							includeInlayFunctionLikeReturnTypeHints = true,
+						},
+					},
+				},
+			})
+
 			-- Java setup
-			vim.lsp.config('jdtls', {
+			vim.lsp.config("jdtls", {
 				cmd = { "jdtls" },
-				root_dir =  vim.fs.root("gradlew", ".git", "mvnw"),
+				root_dir = vim.fs.root("gradlew", ".git", "mvnw"),
 				settings = {
 					java = {
 						configuration = {
@@ -50,18 +62,18 @@ return {
 				},
 			})
 
-      vim.lsp.config ('clangd', {
-        capabilities = capabilities,
-      })
+			vim.lsp.config("clangd", {
+				capabilities = capabilities,
+			})
 
-      vim.lsp.config( 'pyright', {
+			vim.lsp.config("pyright", {
 				capabilities = capabilities,
 				on_new_config = function(config, root_dir)
 					config.settings = config.settings or {}
 					config.settings.python = config.settings.python or {}
 					config.settings.python.pythonPath = get_python_path(root_dir)
 				end,
-        root_dir = vim.fs.root("pyproject.toml", "setup.py", "requirements.txt", ".git"),
+				root_dir = vim.fs.root("pyproject.toml", "setup.py", "requirements.txt", ".git"),
 			})
 
 			vim.keymap.set("n", "<leader>K", vim.lsp.buf.hover, {})

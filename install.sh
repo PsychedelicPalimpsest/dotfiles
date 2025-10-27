@@ -36,7 +36,7 @@ if ! grep -q '\[sublime-text\]' /etc/pacman.conf; then
   echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/stable/x86_64" |
     sudo tee -a /etc/pacman.conf
 fi
-sudo pacman -Syu --noconfirm sublime-text
+sudo pacman -Syu --noconfirm sublime-text xgifwallpaper
 
 # Install yay if not installed
 if ! command -v yay &>/dev/null; then
@@ -115,7 +115,7 @@ ln -s "$LOC/wallpapers" ~/.config/wallpapers
 #    Install my utils
 # ==========================
 
-for script in getbright.sh upbright.sh downbright.sh wallpaper.sh no_sleep.sh can_sleep.sh show_off.sh shutdown_menu.sh dmenu_path.sh dmenu_run.sh back4.sh; do
+for script in getbright.sh upbright.sh downbright.sh wallpaper.sh no_sleep.sh can_sleep.sh show_off.sh shutdown_menu.sh dmenu_path.sh dmenu_run.sh bg_set_wallpaper.sh; do
   sudo install -m 755 "$script" "/bin/${script%.sh}"
 done
 
