@@ -34,7 +34,7 @@ for_window [class="Emulator"] floating enable
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id dunst
 
-exec wallpaper
+exec --no-startup-id  wallpaper
 
 
 # Black screen after 5 min ; suspend after 10 mins
