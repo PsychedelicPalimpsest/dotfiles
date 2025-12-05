@@ -27,7 +27,8 @@ return {
 					"vimls",
 					"jdtls",
 					"pyright",
-					"ts_ls"
+					"ts_ls",
+          "rust_analyzer"
 				},
 			})
 
@@ -65,6 +66,21 @@ return {
 			vim.lsp.config("clangd", {
 				capabilities = capabilities,
 			})
+      vim.lsp.config("rust_analyzer", {
+        capabilities = capabilities,
+        settings = {
+          ["rust-analyzer"] = {
+            cargo = {
+              allFeatures = true,
+            },
+            checkOnSave = true,
+            diagnostics = {
+              enable = true,
+            },
+          },
+        },
+        root_dir = vim.fs.root(0, { "Cargo.toml", "rust-project.json", ".git" }),
+      })
 
 			vim.lsp.config("pyright", {
 				capabilities = capabilities,

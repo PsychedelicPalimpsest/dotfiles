@@ -31,6 +31,7 @@ return {
 					go = { "gofmt" },
 					javascript = { "prettier" },
 					typescript = { "prettier" },
+					rust = { "rustfmt" },
 					elixir = { "mix" },
 					java = { "clang-format" },
 					python = { "black" },
