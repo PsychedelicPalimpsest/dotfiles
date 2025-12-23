@@ -2,5 +2,5 @@
 
 export PATH=$PATH:~/idea/bin/:~/charm/bin:/opt/pulsesecure/bin/:~/node_modules/.bin/
 alias run_eclipse="flatpak run org.eclipse.Java"
-
+alias clip="xclip -selection clipboard"
 

@@ -21,7 +21,7 @@ return {
 							"--preserve-attributes", -- Keeps attribute structure intact
 							"--eof-newline", -- Add newline at EOF
 							"--disable-inlineformatting", -- Prevents inline text compression
-              "--blanks", -- Look good
+							"--blanks", -- Look good
 						},
 					},
 				},
