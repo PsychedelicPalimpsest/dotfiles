@@ -17,7 +17,7 @@ sudo pacman -S --noconfirm nvim git base-devel man xorg-xrandr \
   xclip ttf-noto-nerd libnotify \
   virtualbox virtualbox-host-modules-arch \
   jdk17-openjdk bear acpica dmidecode \
-  webkit2gtk gtkmm3
+  webkit2gtk gtkmm3 hsetroot
 
 # Virtual Box drivers
 # sudo modprobe vboxdrv
@@ -115,7 +115,7 @@ ln -s "$LOC/wallpapers" ~/.config/wallpapers
 #    Install my utils
 # ==========================
 
-for script in getbright.sh upbright.sh downbright.sh wallpaper.sh no_sleep.sh can_sleep.sh show_off.sh shutdown_menu.sh dmenu_path.sh dmenu_run.sh bg_set_wallpaper.sh; do
+for script in getbright.sh upbright.sh downbright.sh wallpaper.sh no_sleep.sh can_sleep.sh show_off.sh shutdown_menu.sh dmenu_path.sh dmenu_run.sh bg_set_wallpaper.sh wallpaper_menu.sh get_wallpaper_mode.sh; do
   sudo install -m 755 "$script" "/bin/${script%.sh}"
 done
 

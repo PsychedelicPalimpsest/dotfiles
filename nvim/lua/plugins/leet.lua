@@ -4,24 +4,43 @@ return {
 	dependencies = {},
 	opts = {
 		lang = "rust",
-    hooks = {
-        ---@type fun(question: lc.ui.Question)[]
-        ["question_enter"] = {
-          function()
-            -- os.execute "sleep 1"
-            local file_extension = vim.fn.expand "%:e"
-            if file_extension == "rs" then
-              local bash_script = tostring(vim.fn.stdpath "config" .. "/rust_leetcode_lsp.sh")
-              local success, error_message = os.execute(bash_script)
-              if success then
-                print "Successfully updated rust-project.json"
-                vim.cmd "LspRestart rust_analyzer"
-              else
-                print("Failed update rust-project.json. Error: " .. error_message)
-              end
-            end
-          end,
-        },
-    }
+		injector = {
+			["rust"] = {
+				before = { "#[allow(dead_code)]", "fn main(){}", "#[allow(dead_code)]", "struct Solution;" },
+			}, ---@type table<lc.lang, lc.inject>
+		},
+		hooks = {
+			---@type fun(question: lc.ui.Question)[]
+			["question_enter"] = {
+				function(question)
+					if question.lang ~= "rust" then
+						return
+					end
+					local problem_dir = vim.fn.stdpath("data") .. "/leetcode/Cargo.toml"
+					local content = [[
+              [package]
+              name = "leetcode"
+              edition = "2021"
+                                                                                                     
+              [lib]
+              name = "%s"
+              path = "%s"
+                                                                                                     
+              [dependencies]
+              rand = "0.8"
+              regex = "1"
+              itertools = "0.14.0"
+            ]]
+					local file = io.open(problem_dir, "w")
+					if file then
+						local formatted = (content:gsub(" +", "")):format(question.q.frontend_id, question:path())
+						file:write(formatted)
+						file:close()
+					else
+						print("Failed to open file: " .. problem_dir)
+					end
+				end,
+			},
+		},
 	},
 }
