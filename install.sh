@@ -115,7 +115,7 @@ ln -s "$LOC/wallpapers" ~/.config/wallpapers
 #    Install my utils
 # ==========================
 
-for script in getbright.sh upbright.sh downbright.sh wallpaper.sh no_sleep.sh can_sleep.sh show_off.sh shutdown_menu.sh dmenu_path.sh dmenu_run.sh bg_set_wallpaper.sh wallpaper_menu.sh get_wallpaper_mode.sh; do
+for script in getbright.sh upbright.sh downbright.sh wallpaper.sh no_sleep.sh can_sleep.sh show_off.sh shutdown_menu.sh dmenu_path.sh dmenu_run.sh bg_set_wallpaper.sh wallpaper_menu.sh get_wallpaper_mode.sh swap_workspaces.sh; do
   sudo install -m 755 "$script" "/bin/${script%.sh}"
 done
 

@@ -179,6 +179,21 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+
+# move focused container to workspace
+bindsym $mod+Control+Shift+1 exec swap_workspaces $ws1
+bindsym $mod+Control+Shift+2 exec swap_workspaces $ws2
+bindsym $mod+Control+Shift+3 exec swap_workspaces $ws3
+bindsym $mod+Control+Shift+4 exec swap_workspaces $ws4
+bindsym $mod+Control+Shift+5 exec swap_workspaces $ws5
+bindsym $mod+Control+Shift+6 exec swap_workspaces $ws6
+bindsym $mod+Control+Shift+7 exec swap_workspaces $ws7
+bindsym $mod+Control+Shift+8 exec swap_workspaces $ws8
+bindsym $mod+Control+Shift+9 exec swap_workspaces $ws9
+bindsym $mod+Control+Shift+0 exec swap_workspaces $ws10
+
+
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)

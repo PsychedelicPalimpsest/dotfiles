@@ -1,6 +1,8 @@
 # Aliases, PATH, and other crap
 
 export PATH=$PATH:~/idea/bin/:~/charm/bin:/opt/pulsesecure/bin/:~/node_modules/.bin/
+export PATH=$PATH:~/.local/share/gem/ruby/3.4.0/bin
 alias run_eclipse="flatpak run org.eclipse.Java"
 alias clip="xclip -selection clipboard"
-
+alias recaf="java -jar ~/.local/lib/recaf-cli-0.8.8.jar run"
+alias uniflash="/home/mitch/ti/uniflash_9.4.0/uniFlashGUI.sh"
