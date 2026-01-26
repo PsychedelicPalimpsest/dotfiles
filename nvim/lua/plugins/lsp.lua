@@ -63,9 +63,21 @@ return {
 				},
 			})
 
-			vim.lsp.config("clangd", {
-				capabilities = capabilities,
-			})
+      -- Define the relative path to your proxy script
+      local local_proxy = vim.fn.getcwd() .. '/clangd-proxy'
+      local cmd = { "clangd" } -- Default global clangd
+
+      -- Check if the proxy script exists and is executable
+      if vim.fn.executable(local_proxy) == 1 then
+        cmd = { local_proxy }
+      end
+
+      vim.lsp.config("clangd", {
+        cmd = cmd,
+      })
+
+
+
       vim.lsp.config("rust_analyzer", {
         capabilities = capabilities,
         settings = {
