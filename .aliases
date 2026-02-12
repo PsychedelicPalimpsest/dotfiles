@@ -5,4 +5,5 @@ export PATH=$PATH:~/.local/share/gem/ruby/3.4.0/bin
 alias run_eclipse="flatpak run org.eclipse.Java"
 alias clip="xclip -selection clipboard"
 alias recaf="java -jar ~/.local/lib/recaf-cli-0.8.8.jar run"
-alias uniflash="/home/mitch/ti/uniflash_9.4.0/uniFlashGUI.sh"
+alias uniflash="~/ti/uniflash_9.4.0/uniFlashGUI.sh"
+alias sysconfig="~/ti/sysconfig_1.26.2/sysconfig_cli.sh"

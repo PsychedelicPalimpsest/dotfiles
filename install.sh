@@ -17,7 +17,9 @@ sudo pacman -S --noconfirm nvim git base-devel man xorg-xrandr \
   xclip ttf-noto-nerd libnotify \
   virtualbox virtualbox-host-modules-arch \
   jdk17-openjdk bear acpica dmidecode \
-  webkit2gtk gtkmm3 hsetroot
+  webkit2gtk gtkmm3 hsetroot 
+
+
 
 # Virtual Box drivers
 # sudo modprobe vboxdrv

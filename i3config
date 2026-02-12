@@ -1,5 +1,7 @@
-
 set $mod Mod4
+
+set $i3_layouts ~/.local/bin/i3-layouts
+set $i3l ~/.local/bin/i3l
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -20,9 +22,6 @@ client.urgent           #2f343a #9000007f #ffffff #900000   #900000
 client.placeholder      #0D0F1E #0c0c0c7f #ffffff #0D0F1E   #0c0c0c
 
 client.background       #0D0F1E
-
-
-
 
 for_window [class="Emulator"] floating enable
 
@@ -193,6 +192,10 @@ bindsym $mod+Control+Shift+9 exec swap_workspaces $ws9
 bindsym $mod+Control+Shift+0 exec swap_workspaces $ws10
 
 
+bindsym $mod+Left workspace prev
+bindsym $mod+Right workspace next
+
+
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -246,6 +249,11 @@ bar {
         }
 }
 
+
+
+
+# Better tiling
+exec autotiling-rs
 
 
 
