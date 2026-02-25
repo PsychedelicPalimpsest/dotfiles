@@ -17,7 +17,6 @@ source ~/.aliases
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$ANDROID_HOME/emulator:$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/latest/bin:$PATH
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="/opt/piavpn/bin/:$PATH"
 export PATH="/usr/local/texlive/2025/bin/x86_64-linux/:$PATH"
 
 
