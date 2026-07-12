@@ -33,6 +33,7 @@ for_window [class="pavucontrol"] floating enable
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id dunst
+exec --no-startup-id battery_notify
 
 exec --no-startup-id  wallpaper
 

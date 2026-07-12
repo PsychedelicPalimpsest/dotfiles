@@ -14,7 +14,7 @@ sudo pacman -S --noconfirm nvim git base-devel man xorg-xrandr \
   unzip tree-sitter fd kitty blueman py3status superfile \
   dunst mpv feh picom gimp python-pip imagemagick \
   pulseaudio-bluetooth ntfs-3g \
-  xclip ttf-noto-nerd libnotify \
+  xclip ttf-noto-nerd libnotify upower \
   virtualbox virtualbox-host-modules-arch \
   jdk17-openjdk bear acpica dmidecode \
   webkit2gtk gtkmm3 hsetroot pavucontrol
@@ -117,7 +117,7 @@ ln -s "$LOC/wallpapers" ~/.config/wallpapers
 #    Install my utils
 # ==========================
 
-for script in getbright.sh upbright.sh downbright.sh wallpaper.sh no_sleep.sh can_sleep.sh show_off.sh shutdown_menu.sh dmenu_path.sh dmenu_run.sh bg_set_wallpaper.sh wallpaper_menu.sh get_wallpaper_mode.sh swap_workspaces.sh; do
+for script in getbright.sh upbright.sh downbright.sh wallpaper.sh no_sleep.sh can_sleep.sh show_off.sh shutdown_menu.sh dmenu_path.sh dmenu_run.sh bg_set_wallpaper.sh wallpaper_menu.sh get_wallpaper_mode.sh swap_workspaces.sh battery_notify.sh; do
   sudo install -m 755 "$script" "/bin/${script%.sh}"
 done
 
